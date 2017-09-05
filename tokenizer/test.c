@@ -14,24 +14,24 @@ int main(){
     write(1,"$ ", 2);
     fgets (inputString, len, stdin) ;
 
-/*
-    char* s = inputString;
-    while(*s != '\0'){
-        write(1, s, 1);
-        s++;
-    }
-*/
     if (stringCompare(inputString, "exit\n")){
         return 0;
     }
+    if (stringCompare(inputString, "nDel\n")){
+        changeDelimiter(&delim);
+        goto LOOP;
+    }
+    if (stringCompare(inputString, "rDel\n")){
+        delim = ' ';
+        goto LOOP;
+    }
 
     int numWords = numberOfWords(inputString, delim);
-    tokenizedString = myToc(inputString, delim);
+    tokenizedString = myToc2(inputString, delim);
     int i;
 
     write(1,"\n", 1);
-
-    for (i = 0; i < numWords + 1; i++){
+    for (i = 0; i < numWords; i++){
         char* temp = tokenizedString[i];
         while(*temp != '\0'){
             write(1, temp, 1);
@@ -39,6 +39,7 @@ int main(){
         }
         write(1,"\n", 1);
     }
+    write(1,"\n", 1);
 
     for (i = 0; i < numWords + 1; i++){
         free(tokenizedString[i]);

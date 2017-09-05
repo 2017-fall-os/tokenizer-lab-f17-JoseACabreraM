@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void changeDelimiter(char* delim){
+    printf("\nInput a new delimiter character: ");
+    scanf("%[^\n]%*c", delim);
+    write(1,"\n", 1);
+}
+
 int stringCompare(char* fString, char* sString){
 
     int i = 0;
@@ -78,12 +84,11 @@ char** myToc(char* inputString, char delim){
         temp++;
     }
 
-    tokenizedStrings[numWords] = (char*) malloc(sizeof(char));
-    tokenizedStrings[numWords][0] = '\0';
+    tokenizedStrings[numWords] = '\0';
 
     return tokenizedStrings;
 }
-/*
+
 char** myToc2(char* inputString, char delim){
 
     int numWords = numberOfWords(inputString, delim);
@@ -111,4 +116,3 @@ char** myToc2(char* inputString, char delim){
 
     return tokenizedStrings;
 }
-*/
