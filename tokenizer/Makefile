@@ -1,6 +1,9 @@
+load: test
+	./test
+
 test: test.o mytoc.o
 	cc -o test test.o mytoc.o
-	./test
+
 CFLAGS=-g -O3
 
 myToc.o: mytoc.c

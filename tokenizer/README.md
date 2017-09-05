@@ -15,6 +15,10 @@ myToc.c - myToc.c.c Header file.
 
 To test it, try:
 
+$ make load
+
+To compile and make object files:
+
 $ make test
 
 To delete binaries:
