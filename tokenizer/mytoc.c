@@ -71,6 +71,11 @@ char** myToc(char* inputString, char delim){
 
     while(1){
 
+        // If end of input string was reached without currently reading a word
+        if(*temp == '\0' && readingWord){
+            break;
+        }
+
         // If currently not in a delimiter, newspace, or end of string, increment current word length counter
         if(*temp != delim && *temp != '\n' && *temp != '\0'){
             currentStringLength++;
