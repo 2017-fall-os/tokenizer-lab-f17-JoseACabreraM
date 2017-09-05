@@ -1,13 +1,13 @@
-test: test.o myToc.o
-  cc -o test test.o myToc.o
-  
+test: test.o mytoc.o
+	cc -o test test.o mytoc.o
+	./test
 CFLAGS=-g -O3
 
-myToc.o: myToc.c
-  cc -c myToc.c
-  
-test.o: test.c myToc.h
-  cc -c test.o
+myToc.o: mytoc.c
+	cc -c mytoc.c
+
+test.o: test.c mytoc.h
+	cc -c test.c
 
 clean:
-	rm -f *.o 
+	rm -f *.o test
