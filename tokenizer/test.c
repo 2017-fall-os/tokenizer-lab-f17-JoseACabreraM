@@ -27,7 +27,7 @@ int main(){
     }
 
     int numWords = numberOfWords(inputString, delim);
-    tokenizedString = myToc2(inputString, delim);
+    tokenizedString = myToc(inputString, delim);
     int i;
 
     write(1,"\n", 1);
