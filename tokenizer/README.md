@@ -7,10 +7,15 @@ also included, it also creates
 The user also has the following commands at his disposal. 
 
   exit - End execution of the program.
+  
   tTest - Provies a sample test of the program using 5 predefined strings.
+  
   nDel - Prompts the user to input a new delimiter character.
+  
   rDel - Resets the delimiter character to ' '.
+  
   aToc - Changes tokenizer function to an alternative version that doesn't make copies of the words.
+  
   rToc - Restores default tokenizer function.
 
 This program contains the following files:
