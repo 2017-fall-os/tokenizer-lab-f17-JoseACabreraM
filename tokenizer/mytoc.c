@@ -39,7 +39,7 @@ int numberOfWords(char* inputString, char delim){
 
     while(1){
         // Considers a word has been found if the current character is not currenlty a delimiter or newspace
-        if (*temp != delim && *temp != '\n'){
+        if (*temp != delim && *temp != '\n' && *temp != '\0'){
             wordFound = 1;
         }
         // If a word has been found and a delimiter or newspace is reached, consider that word as accounted for
@@ -49,7 +49,7 @@ int numberOfWords(char* inputString, char delim){
         }
         // Reached end of input string, return the word counter
         if (*temp == '\0'){
-            return i;
+            return i + wordFound;
         }
         temp++;
     }
@@ -87,7 +87,7 @@ char** myToc(char* inputString, char delim){
         }
 
         // If a delimiter or end of string has been reached and it's not the start of a new word
-        if((*temp == delim || *temp == '\0') && !readingWord){
+        if((*temp == delim || *temp == '\0' ) && !readingWord){
             tokenizedStrings[i] = (char*) malloc(sizeof(char) * (currentStringLength + 1)); // Allocate the necessary space for the new word
             // Using the pointer at the start of the word, copy its contents into the vector
             for (j = 0; j < currentStringLength; j++){

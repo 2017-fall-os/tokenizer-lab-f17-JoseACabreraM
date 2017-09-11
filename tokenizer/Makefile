@@ -4,7 +4,7 @@ load: test
 test: test.o mytoc.o
 	cc -o test test.o mytoc.o
 
-CFLAGS=-g -O3
+CFLAGS= -g -O3
 
 myToc.o: mytoc.c
 	cc -c mytoc.c
